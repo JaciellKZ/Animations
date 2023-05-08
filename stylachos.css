@@ -1,0 +1,443 @@
+/* ANIMATION */
+/*
+body
+{
+    counter-reset: game;
+}
+input:checked
+{
+    counter-increment: game;
+}
+.total-count::after
+{
+    content: counter(game);
+}
+*/
+:root {
+    --dark-brown: #a54a38;
+    --light-brown: #bf624c;
+    --dark-green: #51af5e;
+    --light-green: #51af5e;
+    --shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+body
+{   
+    display: grid;
+    counter-reset: score;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    place-items: center;
+}
+.phone
+{
+    position: relative;
+    border: 8px  solid black;
+    border-radius: 40px;
+    width: 300px;
+    height: 600px;
+    background: #CCEFFF;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+input[type=checkbox]
+{
+    appearance: none;
+    cursor: pointer;
+    height: 50px;
+    margin: 0;
+    position: relative;
+    top: 0;
+    width: 80px;
+    z-index: 2;
+}
+input[type=checkbox]:focus
+{
+    appearance: none;
+    outline: none;
+}
+input:checked
+{
+    counter-increment: score;
+}
+.score::after
+{
+    content: counter(score);
+}
+@keyframes bunny
+{
+    0%
+    {
+        top:0;
+    }
+    25%
+    {
+        top: 80px;
+    }
+    100%
+    {
+        top: 0;
+    }
+}
+@keyframes layer
+{
+    0%
+    {
+        bottom: 0;
+    }
+    25%
+    {
+        bottom: -80px;
+    }
+    100%
+    {
+        bottom: 0;
+    }
+}
+.layer-1
+{
+    position: absolute;
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    right: 60px;
+    animation-name: layer;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.layer-1 input[type=checkbox]
+{
+    animation-name: bunny;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.layer-2
+{
+    position: absolute;
+    z-index: 2;
+    height: 450px;
+    width: 80px;
+    bottom: 0;
+    left: 60px;
+    animation-name: layer;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-2 input[type=checkbox]
+{
+    animation-name: bunny;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-3
+{
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 220px;
+    height: 400px;
+    bottom: 0;
+    background: var(--light-brown);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;  
+}
+
+.layer-4
+{
+    position: absolute;
+    z-index: 4;
+    width: 80px;
+    height: 350px;
+    bottom: 0;
+    left: 13px;
+    animation-name: layer;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-4 input[type=checkbox]
+{
+    animation-name: bunny;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-5
+{
+    position: absolute;
+    z-index: 5;
+    height: 300px;
+    width: 200px;
+    left: 0;
+    bottom: 0;
+    background: var(--light-brown);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden; 
+
+}
+.layer-6
+{
+    position: absolute;
+    z-index: 6;
+    width: 80px;
+    height: 250px;
+    bottom: 0;
+    right: 32px;
+    animation-name: layer;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-6 input[type=checkbox]
+{
+    animation-name: bunny;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.layer-7
+{
+    position: absolute;
+    z-index: 7;
+    height: 200px;
+    width: 160px;
+    right: 0;
+    bottom: 0;
+    background: var(--light-brown);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden; 
+}
+.layer-8
+{
+    position: absolute;
+    z-index: 8;
+    height: 120px;
+    width: 180px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    bottom: 0;
+}
+.layer-8__left-lawn 
+{
+    background: var(--dark-green);
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    display: inline-block;
+    height: 70%;
+    left: 0;
+    position: absolute;
+    width: 80px;
+}
+.layer-8__center-lawn 
+{
+    background: var(--dark-green);
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    display: inline-block;
+    height: 100%;
+    left: 60px;
+    position: absolute;
+    width: 80px;
+}
+.layer-8__right-lawn 
+{
+    background: var(--dark-green);
+    border-radius: 40px 40px 0 0;
+    bottom: 0;
+    display: inline-block;
+    height: 80%;
+    left: 130px;
+    position: absolute;
+    width: 80px;
+}
+.layer-9
+{
+    position: absolute;
+    z-index: 9;
+    height: 100px;
+    width: 120px;
+    bottom: 0;
+}
+.layer-9__left-cloud 
+{
+    background: white;
+    border-radius: 40px 40px 0 0;
+    display: inline-block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 80px;
+}
+.layer-9__right-cloud 
+{
+    background: white;
+    border-radius: 0 40px 30px 0;
+    bottom: 0;
+    display: inline-block;
+    height: 60%;
+    left: 80px;
+    position: absolute;
+    width: 40px;
+}
+.layer-10
+{
+    position: absolute;
+    z-index: 10;
+    height: 100px;
+    width: 120px;
+    right: 0;
+    bottom: 0;
+}
+.layer-10__left-cloud 
+{
+    background: white;
+    border-radius: 40px 0 0 30px;
+    bottom: 0;
+    display: inline-block;
+    height: 60%;
+    right: 80px;
+    position: absolute;
+    width: 40px;
+}
+.layer-10__right-cloud 
+{
+    background: white;
+    border-radius: 40px 40px 0 0;
+    display: inline-block;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    width: 80px;
+}
+.left-ear--outer
+{
+    background: white;
+    border-radius: 90%;
+    height: 50px;
+    width: 20px;
+    position: absolute;
+    left: 10px;
+}
+.left-ear--inner
+{
+    background: pink;
+    border-radius: 90%;
+    height: 50px;
+    width: 10px;
+    position: absolute;
+    left: 15px;
+    top: 8px;
+}
+.right-ear--outer
+{
+    background: white;
+    border-radius: 90%;
+    height: 50px;
+    width: 20px;
+    position: absolute;
+    right: 10px;
+}
+.right-ear--inner
+{
+    background: pink;
+    border-radius: 90%;
+    height: 50px;
+    width: 10px;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+}
+.head
+{
+    background: white;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    height: 80px;
+}
+.head__eye
+{
+    background: gray;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 15px;
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes blink
+{
+    0%
+    {
+        height: 4px;
+    } 
+    5%
+    {   
+        transform: translate(0px,2px);
+        height: 1px;
+    }
+    10%
+    {   
+        transform: translate(0px,0px);
+        height: 4px;
+    }
+}
+.head__eye--left
+{
+    left: 31px;
+}
+.head__eye--right
+{
+    right: 31px;
+}
+.lawn 
+{
+    background: var(--dark-green);
+    height: 20px;
+    width: 100%;
+}
+.land 
+{
+    background: linear-gradient(135deg, var(--dark-green) 25%, transparent 25%) -50px 0, linear-gradient(-135deg, var(--dark-green) 25%, transparent 25%) -50px 0, linear-gradient(45deg, var(--light-brown) 25%, transparent 25%), linear-gradient(-45deg, transparent 25%, var(--dark-brown) 25%);
+    background-size: 33px 30px;
+    height: 30px;
+    width: 100%;
+}
+
+
+.title
+{
+    display: flex;
+    justify-content: center;
+    margin: 45px 0 10px;
+}
+.title img
+{
+    width: 60%;
+}
+.score
+{
+    color: var(--light-brown);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}
